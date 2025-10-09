@@ -23,3 +23,5 @@ int main()
 
     return 0;
 }
+
+// PROBLEM LINK: https://www.hackerrank.com/contests/assignment-01-a-introduction-to-c-programming-a-batch-08/challenges/shopping-13
