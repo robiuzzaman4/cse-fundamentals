@@ -9,29 +9,29 @@ int main()
     int min, max;
 
     // find min
-    if (a <= b && a <= c)
+    if (a < b && a < c)
     {
         min = a;
     }
-    else if (b <= a && b <= c)
+    else if (b < a && b < c)
     {
         min = b;
     }
-    else if (c <= a && c <= b)
+    else if (c < a && c < b)
     {
         min = c;
     }
 
     // find max
-    if (a >= b && a >= c)
+    if (a > b && a > c)
     {
         max = a;
     }
-    else if (b >= a && b >= c)
+    else if (b > a && b > c)
     {
         max = b;
     }
-    else if (c >= a && c >= b)
+    else if (c > a && c > b)
     {
         max = c;
     }
