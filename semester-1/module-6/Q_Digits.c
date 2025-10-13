@@ -10,11 +10,16 @@ int main()
         int n;
         scanf("%d", &n);
 
-        while (n != 0)
+        // if (n == 0)
+        // {
+        //     printf("%d", 0);
+        // } - alternativly use do while loop
+
+        do
         {
             printf("%d ", n % 10);
             n /= 10;
-        }
+        } while (n != 0);
 
         printf("\n");
     }
