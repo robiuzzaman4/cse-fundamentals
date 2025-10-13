@@ -2,22 +2,19 @@
 
 int main()
 {
-    int pass;
+    int n;
+    scanf("%d", &n);
 
-    while (scanf("%d", &pass))
+    int x;
+
+    for (int i = 1; i <= n; i++)
     {
-        if (pass == 1999)
+        for (int j = 0; j <= x; j--)
         {
-            printf("Correct\n");
-            break;
-        }
-        else
-        {
-            printf("Wrong\n");
+            scanf("%d", &x);
+            printf("%d\n ", j);
         }
     }
 
     return 0;
 }
-
-// PROBLEM LINK: https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/F
