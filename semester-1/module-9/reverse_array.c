@@ -1,11 +1,7 @@
-## **Two Pointer Technique**
-
-```c
 #include <stdio.h>
 
 int main()
 {
-    // tacking inputs
     int n;
     scanf("%d", &n);
 
@@ -15,7 +11,6 @@ int main()
         scanf("%d", &a[i]);
     }
 
-    // reverse array
     int i = 0;
     int j = n - 1;
 
@@ -29,7 +24,6 @@ int main()
         j--;
     }
 
-    // print the array
     for (int i = 0; i < n; i++)
     {
         printf("%d ", a[i]);
@@ -37,5 +31,3 @@ int main()
 
     return 0;
 }
-
-```
