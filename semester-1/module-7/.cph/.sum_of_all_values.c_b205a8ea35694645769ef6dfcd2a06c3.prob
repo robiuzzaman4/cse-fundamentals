@@ -1,1 +1,0 @@
-{"name":"Local: sum_of_all_values","url":"e:\\Phitron\\cse-fundamentals\\semester-1\\module-7\\sum_of_all_values.c","tests":[{"id":1760457367294,"input":"10 20 30","output":"60"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Phitron\\cse-fundamentals\\semester-1\\module-7\\sum_of_all_values.c","group":"local","local":true}
