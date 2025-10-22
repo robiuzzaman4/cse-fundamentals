@@ -10,12 +10,17 @@ int main()
 
     for (int i = 0; i < strlen(s); i++)
     {
-        freq[s[i - 'a']]++;
+        char ch = s[i];
+        int index_of_ch = ch - 'a';
+        freq[index_of_ch]++;
     }
 
     for (int i = 0; i < 26; i++)
     {
-        printf("%c : %d", i + 'a', freq[i]);
+        if (freq[i] > 0)
+        {
+            printf("%c : %d\n", i + 'a', freq[i]);
+        }
     }
 
     return 0;
