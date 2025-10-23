@@ -1,21 +1,19 @@
 #include <stdio.h>
-#include <string.h>
 
 int main()
 {
-    static char s[10000001];
-    scanf("%s", &s);
+    int t;
+    scanf("%d", &t);
 
-    int freq[26] = {0};
-
-    for (int i = 0; i < strlen(s); i++)
+    for (int i = 0; i < t; i++)
     {
-        freq[s[i - 'a']]++;
-    }
+        int m1, m2, d;
+        scanf("%d %d %d", &m1, &m2, &d);
 
-    for (int i = 0; i < 26; i++)
-    {
-        printf("%c : %d", i + 'a', freq[i]);
+        int new_days = (d * m1) / (m1 + m2);
+        int diff = d - new_days;
+
+        printf("%d\n", diff);
     }
 
     return 0;
