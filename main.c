@@ -2,19 +2,15 @@
 
 int main()
 {
-    int t;
-    scanf("%d", &t);
+    int a, b;
+    scanf("%d %d", &a, &b);
+    int code_len = a + b + 1 + 1;
+    char s[code_len];
 
-    for (int i = 0; i < t; i++)
-    {
-        int m1, m2, d;
-        scanf("%d %d %d", &m1, &m2, &d);
+    scanf("%s", &s);
 
-        int new_days = (d * m1) / (m1 + m2);
-        int diff = d - new_days;
-
-        printf("%d\n", diff);
-    }
+    printf("%d %d\n", a, b);
+    printf("%s\n", s);
 
     return 0;
 }
