@@ -4,7 +4,7 @@ int main()
 {
     int a, b;
     char s;
-    scanf("%d %s %d", &a, &s, &b);
+    scanf("%d %c %d", &a, &s, &b);
 
     int is_right = 0;
 
