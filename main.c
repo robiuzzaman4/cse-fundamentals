@@ -2,32 +2,31 @@
 
 int main()
 {
-    int a, b;
-    char s;
-    scanf("%d %s %d", &a, &s, &b);
+    int n;
+    scanf("%d", &n);
 
-    int is_right = 0;
-
-    if (s == '>' && a > b)
+    // Part 1: Increasing triangle
+    for (int i = 1; i <= n; i++)
     {
-        is_right = 1;
-    }
-    else if (s == '<' && a < b)
-    {
-        is_right = 1;
-    }
-    else if (s == '=' && a == b)
-    {
-        is_right = 1;
+        for (int j = 1; j <= i; j++)
+        {
+            printf("%d", j);
+        }
+        printf("\n");
     }
 
-    if (is_right > 0)
+    // Part 2: Decreasing triangle (with spaces)
+    for (int i = 1; i <= n - 1; i++)
     {
-        printf("Right");
-    }
-    else
-    {
-        printf("Wrong");
+        for (int j = 1; j <= i; j++)
+        {
+            printf(" ");
+        }
+        for (int j = i; j < n; j++)
+        {
+            printf("%d", j);
+        }
+        printf("\n");
     }
 
     return 0;
