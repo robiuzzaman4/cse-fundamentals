@@ -2,32 +2,16 @@
 
 int main()
 {
-    int n;
+    int n, number;
     scanf("%d", &n);
+    scanf("%d", &number);
 
-    // Part 1: Increasing triangle
-    for (int i = 1; i <= n; i++)
+    if (number % 3 == 0)
     {
-        for (int j = 1; j <= i; j++)
-        {
-            printf("%d", j);
-        }
-        printf("\n");
+        printf("%d", number);
     }
 
-    // Part 2: Decreasing triangle (with spaces)
-    for (int i = 1; i <= n - 1; i++)
-    {
-        for (int j = 1; j <= i; j++)
-        {
-            printf(" ");
-        }
-        for (int j = i; j < n; j++)
-        {
-            printf("%d", j);
-        }
-        printf("\n");
-    }
+    // printf("%d\n", n);
 
     return 0;
 }
