@@ -1,17 +1,36 @@
 #include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
 
 int main()
 {
-    int ceil_ans = ceil(4.5);
-    int floor_ans = floor(4.5);
-    int round_ans = round(4.6);
-    int abs_ans = abs(-10);
+    // tacking inputs
+    int n;
+    scanf("%d", &n);
 
-    printf("ceil() => %d\n", ceil_ans);
-    printf("floor() => %d\n", floor_ans);
-    printf("round_ans() => %d\n", round_ans);
-    printf("abs() => %d\n", abs_ans);
+    int a[n];
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    // sort array by using selection sort algorithm
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (a[i] > a[j])
+            {
+                int temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+
+    // print sorted array
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", a[i]);
+    }
+
     return 0;
 }
