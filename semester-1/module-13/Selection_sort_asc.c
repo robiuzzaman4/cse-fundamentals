@@ -15,11 +15,7 @@ int main()
     {
         for (int j = i + 1; j < n; j++)
         {
-            if (a[i] < a[j])
-            {
-                continue;
-            }
-            else
+            if (a[i] > a[j])
             {
                 int temp = a[i];
                 a[i] = a[j];

@@ -17,10 +17,6 @@ int main()
         {
             if (a[i] < a[j])
             {
-                continue;
-            }
-            else
-            {
                 int temp = a[i];
                 a[i] = a[j];
                 a[j] = temp;

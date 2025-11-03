@@ -2,7 +2,7 @@
 
 int main()
 {
-    int n;
+    int n, x;
     scanf("%d", &n);
     int a[n];
 
@@ -11,26 +11,28 @@ int main()
         scanf("%d", &a[i]);
     }
 
+    scanf("%d", &x);
+
+    int result = 0;
+
     for (int i = 0; i < n - 1; i++)
     {
         for (int j = i + 1; j < n; j++)
         {
-            if (a[i] < a[j])
+            if (a[i] + a[j] == x)
             {
-                continue;
-            }
-            else
-            {
-                int temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
+                result = 1;
             }
         }
     }
 
-    for (int i = 0; i < n; i++)
+    if (result > 0)
     {
-        printf("%d ", a[i]);
+        printf("YES");
+    }
+    else
+    {
+        printf("NO");
     }
 
     return 0;
