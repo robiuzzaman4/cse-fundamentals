@@ -13,15 +13,13 @@ int main()
             scanf("%d", &a[i][j]);
         }
     }
-
     for (int i = 0; i < r; i++)
     {
-        printf("----------\n");
         for (int j = 0; j < c; j++)
         {
-            printf("%d %d %d\n", a[0][0], a[1][1], a[r-1][c-1]);
-            break;
+            printf("%d ", a[i][j]);
         }
+        printf("\n");
     }
 
     return 0;

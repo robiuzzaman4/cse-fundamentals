@@ -14,14 +14,28 @@ int main()
         }
     }
 
+    // == using flag variable ==
+    int isZeroMatrix = 1;
+
     for (int i = 0; i < r; i++)
     {
-        printf("----------\n");
         for (int j = 0; j < c; j++)
         {
-            printf("%d %d %d\n", a[0][0], a[1][1], a[r-1][c-1]);
-            break;
+            if (a[i][j] != 0)
+            {
+                isZeroMatrix = 0;
+                break;
+            }
         }
+    }
+
+    if (isZeroMatrix > 0)
+    {
+        printf("Zero Matrix = True");
+    }
+    else
+    {
+        printf("Zero Matrix = False");
     }
 
     return 0;

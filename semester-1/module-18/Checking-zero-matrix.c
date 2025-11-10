@@ -14,14 +14,27 @@ int main()
         }
     }
 
+    int total_value = r * c;
+    int total_zero = 0;
+
     for (int i = 0; i < r; i++)
     {
-        printf("----------\n");
         for (int j = 0; j < c; j++)
         {
-            printf("%d %d %d\n", a[0][0], a[1][1], a[r-1][c-1]);
-            break;
+            if (a[i][j] == 0)
+            {
+                total_zero++;
+            }
         }
+    }
+
+    if (total_value == total_zero)
+    {
+        printf("Zero Matrix = True");
+    }
+    else
+    {
+        printf("Zero Matrix = False");
     }
 
     return 0;
