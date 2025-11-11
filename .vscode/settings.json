@@ -4,6 +4,7 @@
         "limits": "c",
         "string.h": "c",
         "stdbool.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "math.h": "c"
     }
 }
