@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int main()
 {
@@ -14,13 +15,30 @@ int main()
             scanf("%d", &a[i][j]);
         }
     }
+
+    int n;
+    scanf("%d", &n);
+
+    bool is_contain = false;
+
     for (int i = 0; i < r; i++)
     {
         for (int j = 0; j < c; j++)
         {
-            printf("%d", a[i][j]);
+            if (a[i][j] == n)
+            {
+                is_contain = true;
+            }
         }
-        printf("\n");
+    }
+
+    if (is_contain)
+    {
+        printf("will not take number");
+    }
+    else
+    {
+        printf("will take number");
     }
 
     return 0;
