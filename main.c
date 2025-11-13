@@ -2,21 +2,28 @@
 
 int main()
 {
-    int r, c;
-    scanf("%d %d", &r, &c);
+    int n, m;
+    scanf("%d %d", &n, &m);
 
-    int a[r][c];
+    // if (n != m)
+    // {
+    //     printf("NO");
+    //     return 0;
+    // }
 
-    for (int i = 0; i < r; i++)
+    int a[n][m];
+
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < c; j++)
+        for (int j = 0; j < m; i++)
         {
             scanf("%d", &a[i][j]);
         }
     }
-    for (int i = 0; i < r; i++)
+
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < c; j++)
+        for (int j = 0; j < m; i++)
         {
             printf("%d", a[i][j]);
         }
