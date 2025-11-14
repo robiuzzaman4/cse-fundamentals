@@ -6,6 +6,7 @@
         "stdbool.h": "c",
         "stdlib.h": "c",
         "math.h": "c",
-        "type_traits": "c"
+        "type_traits": "c",
+        "iostream": "cpp"
     }
 }
