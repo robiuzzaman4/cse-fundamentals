@@ -8,11 +8,11 @@ public:
     int roll;
     int cls;
     int cgpa;
-    Student(int r, int c, double g)
+    Student(int roll, int cls, double cgpa)
     {
-        roll = r;
-        cls = c;
-        cgpa = g;
+        this->roll = roll;
+        this->cls = cls;
+        this->cgpa = cgpa;
     }
 };
 
