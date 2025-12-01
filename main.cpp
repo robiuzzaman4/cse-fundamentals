@@ -1,24 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+class Student
+{
+public:
+    string name;
+    int roll;
+    int marks;
+    char section;
+};
+
 int main()
 {
-    string s;
-    getline(cin, s);
+    int n;
+    cin >> n;
 
-    // cout << s << endl;
+    Student a[n];
 
-    stringstream ss(s);
-    string word;
+    char temp_sections[n];
 
-    int count = 0;
-    while (ss >> word)
+    for (int i = 0; i < n; i++)
     {
-        cout << word << endl;
-        count++;
+        cin >> a[i].name >> a[i].roll >> a[i].marks >> a[i].section;
+        temp_sections[i] = a[i].section;
     }
 
-    cout << count << endl;
+    for (int i = 0, j = n - 1; i < j; i++, j--)
+    {
+        swap(temp_sections[i], temp_sections[j]);
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        a[i].section = temp_sections[i];
+        cout << a[i].name << " " << a[i].roll << " " << a[i].marks << " " << a[i].section << endl;
+    }
 
     return 0;
 }
