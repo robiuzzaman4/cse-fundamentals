@@ -13,16 +13,6 @@ public:
         this->next = NULL;
     }
 };
-
-void delete_at_head(Node *&head, int value)
-{
-    Node *newNode = new Node(value);
-
-    newNode->next = head;
-
-    head = newNode;
-}
-
 void insert_at_tail(Node *&head, Node *&tail, int value)
 {
     Node *newNode = new Node(value);
@@ -39,6 +29,31 @@ void insert_at_tail(Node *&head, Node *&tail, int value)
     }
 }
 
+void delete_at_head(Node *&head)
+{
+    Node *delete_able_node = head;
+    head = head->next;
+    delete delete_able_node;
+}
+
+void delete_at_tail(Node *&head, Node *&tail, int pos)
+{
+    Node *temp = head;
+
+    for (int i = 0; i < pos - 1; i++)
+    {
+        temp = temp->next;
+    }
+
+    Node *delete_node = temp->next;
+
+    temp->next = temp->next->next;
+
+    delete delete_node;
+
+    tail = temp;
+}
+
 void print_linked_list(Node *head)
 {
     Node *temp = head;
@@ -51,23 +66,25 @@ void print_linked_list(Node *head)
 
 int main()
 {
-    Node *head = new Node(10);
-    Node *a = new Node(20);
-    Node *tail = new Node(30);
+    Node *head = NULL;
+    Node *tail = NULL;
 
-    head->next = a;
-    a->next = tail;
+    int val;
+    while (true)
+    {
+        cin >> val;
 
-    insert_at_tail(head, tail, 500);
-    insert_at_tail(head, tail, 600);
-    insert_at_tail(head, tail, 700);
-    insert_at_tail(head, tail, 800);
-    insert_at_tail(head, tail, 900);
-    insert_at_tail(head, tail, 1000);
+        if (val == -1)
+        {
+            break;
+        }
 
-    
+        insert_at_tail(head, tail, val);
+    }
+
+    delete_at_tail(head, tail, 3);
+
     print_linked_list(head);
-    
-    cout << "tail " << tail->value;
+
     return 0;
 }

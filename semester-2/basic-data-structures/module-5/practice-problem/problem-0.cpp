@@ -14,18 +14,24 @@ public:
     }
 };
 
-void delete_at_head(Node *&head, int value)
+int list_size(Node *head)
 {
-    Node *newNode = new Node(value);
+    int count = 0;
+    Node *current = head;
 
-    newNode->next = head;
+    while (current != NULL)
+    {
+        count++;
+        current = current->next;
+    }
 
-    head = newNode;
+    return count;
 }
 
-void print_linked_list(Node *head)
+void display_list(Node *head)
 {
     Node *temp = head;
+
     while (temp != NULL)
     {
         cout << temp->value << endl;
@@ -37,16 +43,16 @@ int main()
 {
     Node *head = new Node(10);
     Node *a = new Node(20);
-    Node *b = new Node(30);
+    Node *tail = new Node(30);
 
     head->next = a;
-    a->next = b;
+    a->next = tail;
 
-    delete_at_head(head, 100);
-    delete_at_head(head, 200);
-    delete_at_head(head, 300);
+    int size = list_size(head);
 
-    print_linked_list(head);
+    cout << size << endl;
+
+    display_list(head);
 
     return 0;
 }

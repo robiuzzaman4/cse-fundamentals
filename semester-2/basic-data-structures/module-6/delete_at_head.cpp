@@ -14,33 +14,11 @@ public:
     }
 };
 
-void delete_at_head(Node *&head, int value)
+void delete_at_head(Node *&head)
 {
-    Node *newNode = new Node(value);
-
-    newNode->next = head;
-
-    head = newNode;
-}
-
-void insert_at_tail(Node *&head, int value)
-{
-    Node *newNode = new Node(value);
-
-    if (head == NULL)
-    {
-        head = newNode;
-    }
-    else
-    {
-        Node *temp = head;
-        while (temp->next != NULL)
-        {
-            temp = temp->next;
-        }
-
-        temp->next = newNode;
-    }
+    Node *delete_able_node = head;
+    head = head->next;
+    delete delete_able_node;
 }
 
 void print_linked_list(Node *head)
@@ -62,7 +40,7 @@ int main()
     head->next = a;
     a->next = b;
 
-    insert_at_tail(head, 500);
+    delete_at_head(head);
 
     print_linked_list(head);
 
