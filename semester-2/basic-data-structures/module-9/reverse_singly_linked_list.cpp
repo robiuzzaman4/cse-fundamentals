@@ -49,16 +49,19 @@ void print_linked_list(Node *head)
     }
 }
 
-void reversed_linked_list(Node *temp)
+void reversed_linked_list(Node *&head, Node *&tail, Node *temp)
 {
-
-    if (temp == NULL)
+    if (temp->next == NULL)
     {
+        head = temp;
         return;
     }
 
-    reversed_linked_list(temp->next);
-    cout << temp->value << endl;
+    reversed_linked_list(head, tail, temp->next);
+
+    temp->next->next = temp;
+    temp->next = NULL;
+    tail = temp;
 }
 
 int main()
@@ -79,8 +82,8 @@ int main()
         insert_at_tail(head, tail, val);
     }
 
-    // print_linked_list(head);
-    reversed_linked_list(head);
+    reversed_linked_list(head, tail, head);
+    print_linked_list(head);
 
     return 0;
 }
