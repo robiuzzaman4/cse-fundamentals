@@ -19,7 +19,7 @@ int main()
         }
     }
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < e; i++)
     {
         int a, b;
         cin >> a >> b;

@@ -6,47 +6,39 @@ int main()
     int n, e;
     cin >> n >> e;
 
-    int matrix[n][n]; // n*n matrix
+    int adj_matrix[n][n];
 
-    memset(matrix, 0, sizeof(matrix)); // set '0' as value for all matrix row and col
+    // set all matrix value with 0
+    memset(adj_matrix, 0, sizeof(adj_matrix));
 
+    // set diagonals to 1
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
             if (i == j)
-                matrix[i][j] = 1;
+                adj_matrix[i][j] = 1;
         }
     }
 
+    // read all 'e' edges and set connection on matrix
     for (int i = 0; i < e; i++)
     {
         int a, b;
         cin >> a >> b;
-        matrix[a][b] = 1;
+        adj_matrix[a - 1][b - 1] = 1;
+        adj_matrix[b - 1][a - 1] = 1;
     }
 
-    // print
+    // print adjacency matrix
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            cout << matrix[i][j] << " ";
+            cout << adj_matrix[i][j] << " ";
         }
         cout << endl;
     }
 
     return 0;
 }
-
-// input
-/**
- * 
- * 5 5
- * 0 1
- * 0 2
- * 3 0
- * 1 3
- * 3 4
- * 
- */

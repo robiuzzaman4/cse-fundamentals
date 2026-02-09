@@ -8,6 +8,7 @@ int main()
 
     vector<pair<int, int>> edge_list;
 
+    // set on the edge list
     while (e--)
     {
         int a, b;
