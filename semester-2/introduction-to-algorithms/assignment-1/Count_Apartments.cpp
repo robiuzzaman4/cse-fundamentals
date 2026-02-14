@@ -2,34 +2,28 @@
 using namespace std;
 
 int n, m;
-char grid[105][105];
-bool visited[105][105];
+char grid[1005][1005];
+bool visited[1005][1005];
 vector<pair<int, int>> movements = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
 bool is_valid(int i, int j)
 {
     if (i < 0 || i >= n || j < 0 || j >= m)
-    {
         return false;
-    }
     else
-    {
         return true;
-    }
 }
 
 void dfs(int si, int sj)
 {
-    cout << si << " " << sj << endl;
     visited[si][sj] = true;
 
-    for (int i = 0; i < movements.size(); i++)
+    for (int i = 0; i < 4; i++)
     {
-        // finding child idx
         int ci = si + movements[i].first;
         int cj = sj + movements[i].second;
 
-        if (is_valid(ci, cj) && !visited[ci][cj])
+        if (is_valid(ci, cj) && !visited[ci][cj] && grid[ci][cj] != '#')
         {
             dfs(ci, cj);
         }
@@ -50,32 +44,21 @@ int main()
 
     memset(visited, false, sizeof(visited));
 
-    int si, sj;
-    cin >> si >> sj;
+    int cnt = 0;
 
-    dfs(si, sj);
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if (grid[i][j] != '#' && !visited[i][j])
+            {
+                dfs(i, j);
+                cnt++;
+            }
+        }
+    }
+
+    cout << cnt << endl;
 
     return 0;
 }
-
-
-// input:
-// 3 4
-// . . . .
-// . . . .
-// . . . .
-// 1 2
-
-// output:
-// 1 2
-// 0 2
-// 0 1
-// 1 1
-// 2 1
-// 2 0
-// 1 0
-// 0 0
-// 2 2
-// 2 3
-// 1 3
-// 0 3
