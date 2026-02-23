@@ -4,22 +4,23 @@ using namespace std;
 int n, m;
 bool visited[105][105];
 int level[105][105];
-vector<pair<int, int>> movements = {{-1, 2}, {1, 2}, {1, -2}, {-1, -2}, {2, 1}, {2, -1}, {-2, 1}, {-2, -1}};
+vector<pair<int, int>> d = {{-1, 2}, {1, 2}, {1, -2}, {-1, -2}, {2, 1}, {2, -1}, {-2, 1}, {-2, -1}};
 
 bool is_valid(int i, int j)
 {
-    if (i < 1 || i > n || j < 1 || j > m)
+    if (i < 0 || i >= n || j < 0 || j >= m)
         return false;
     else
         return true;
 }
 
-void bfs(int si, int sj)
+void bfs(int ki, int kj)
 {
     queue<pair<int, int>> q;
-    q.push({si, sj});
-    visited[si][sj] = true;
-    level[si][sj] = 0;
+    q.push({ki, kj});
+    visited[ki][kj] = true;
+    level[ki][kj] = 0;
+
     while (!q.empty())
     {
         pair<int, int> p = q.front();
@@ -29,8 +30,8 @@ void bfs(int si, int sj)
 
         for (int i = 0; i < 8; i++)
         {
-            int ci = pi + movements[i].first;
-            int cj = pj + movements[i].second;
+            int ci = pi + d[i].first;
+            int cj = pj + d[i].second;
 
             if (is_valid(ci, cj) && !visited[ci][cj])
             {
@@ -44,8 +45,6 @@ void bfs(int si, int sj)
 
 int main()
 {
-    n = 8, m = 8;
-
     int t;
     cin >> t;
     while (t--)
@@ -53,16 +52,15 @@ int main()
         memset(visited, false, sizeof(visited));
         memset(level, -1, sizeof(level));
 
-        string s, d;
-        cin >> s >> d;
-        int si = s[1] - '0';
-        int sj = s[0] - 'a' + 1;
-        int di = d[1] - '0';
-        int dj = d[0] - 'a' + 1;
+        cin >> n >> m;
+        int ki, kj;
+        cin >> ki >> kj;
+        int qi, qj;
+        cin >> qi >> qj;
 
-        bfs(si, sj);
+        bfs(ki, kj);
 
-        cout << level[di][dj] << endl;
+        cout << level[qi][qj] << endl;
     }
 
     return 0;
