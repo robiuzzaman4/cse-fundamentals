@@ -1,8 +1,0 @@
-4 7
-2 3 4 5
-4 7 6 5
-
-
-knapsack(3,7)
-    o1 = knapsack(2,(7-5=2)) + 5 
-    o2 = knapsack(2,7)
