@@ -2,8 +2,9 @@
 using namespace std;
 
 int val[1005];
+int dp[1005][1005];
 
-bool subset_sum(int idx, int sum) // O(2^N)
+bool subset_sum(int idx, int sum) // O(N*S)
 {
     if (idx < 0)
     {
@@ -13,15 +14,20 @@ bool subset_sum(int idx, int sum) // O(2^N)
             return false;
     }
 
+    if (dp[idx][sum] != -1)
+        return dp[idx][sum];
+
     if (val[idx] <= sum)
     {
         bool opt1 = subset_sum(idx - 1, sum - val[idx]);
         bool opt2 = subset_sum(idx - 1, sum);
-        return opt1 || opt2;
+        dp[idx][sum] = opt1 || opt2;
+        return dp[idx][sum];
     }
     else
     {
-        return subset_sum(idx - 1, sum);
+        dp[idx][sum] = subset_sum(idx - 1, sum);
+        return dp[idx][sum];
     }
 }
 
@@ -37,6 +43,14 @@ int main()
 
     int sum;
     cin >> sum;
+
+    for (int i = 0; i <= n; i++)
+    {
+        for (int j = 0; j <= sum; j++)
+        {
+            dp[i][j] = -1;
+        }
+    }
 
     if (subset_sum(n - 1, sum))
         cout << "YES";

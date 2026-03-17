@@ -1,0 +1,37 @@
+class Solution {
+public:
+    int dp[305][5005];
+    int subset_sum(int idx, int amount, vector<int>& coins) {
+        if (idx < 0) {
+            if (amount == 0)
+                return 1;
+            else
+                return 0;
+        }
+
+        if (dp[idx][amount] != -1)
+            return dp[idx][amount];
+
+        if (coins[idx] <= amount) {
+            int opt1 = subset_sum(idx, amount - coins[idx], coins);
+            int opt2 = subset_sum(idx - 1, amount, coins);
+            dp[idx][amount] = opt1 + opt2;
+            return dp[idx][amount];
+        } else {
+            dp[idx][amount] = subset_sum(idx - 1, amount, coins);
+            return dp[idx][amount];
+        }
+    }
+
+    int change(int amount, vector<int>& coins) {
+        int n = coins.size();
+
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j <= amount; j++) {
+                dp[i][j] = -1;
+            }
+        }
+
+        return subset_sum(n - 1, amount, coins);
+    }
+};
