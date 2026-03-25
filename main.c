@@ -9,5 +9,15 @@
 // 9. O(logN*N)
 // 10. O(sqrt(N))
 // 11. O(NlogN)
-// 12. O(N*M) 
-// 13. O(NlogN) 
+// 12. O(N*M)
+// 13. O(NlogN)
+
+#include <stdio.h>
+
+int main()
+{
+    printf("Hello world");
+    return 0;
+}
+
+
