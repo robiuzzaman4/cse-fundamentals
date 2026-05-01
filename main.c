@@ -1,17 +1,3 @@
-// 1. O(N)
-// 2. O(N)
-// 3. O(logN)
-// 4. O(N*N)
-// 5. O(N)
-// 6. O(N)
-// 7. O(N*N)
-// 8. O(logN)
-// 9. O(logN*N)
-// 10. O(sqrt(N))
-// 11. O(NlogN)
-// 12. O(N*M)
-// 13. O(NlogN)
-
 #include <stdio.h>
 
 int main()
@@ -19,5 +5,3 @@ int main()
     printf("Hello world");
     return 0;
 }
-
-
