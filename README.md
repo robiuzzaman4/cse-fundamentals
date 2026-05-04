@@ -5,3 +5,5 @@
 - **C++**
 - **Data Structures**
 - **Algorithms**
+- **Problem Solving**
+- **Competitive Programming**
